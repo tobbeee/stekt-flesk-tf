@@ -1,4 +1,4 @@
-# stekt-flesk-tf
+# stekt-flesk-keycloak-tf
 To run this code, you need to have [Terraform](https://www.terraform.io/downloads.html) installed.
 
 ## How to run
