@@ -1,16 +1,17 @@
-terraform {
-  required_providers {
-    keycloak = {
-      source  = "mrparkers/keycloak"
-      version = "~> 4.2"
-    }
-  }
-}
+#############################
+# Keycloak Demo Setup
+# This file defines the base realm.
+# Other resources (users, groups, etc.)
+# are split into separate .tf files.
+#############################
 
-provider "keycloak" {
-  client_id     = "admin-cli"
-  username      = "user"
-  password      = "uBFE6cxs3m"
-  url           = "http://localhost:8082"
-  realm         = "master"
+resource "keycloak_realm" "demo_realm" {
+  realm               = "demo-realm"
+  enabled             = true
+  display_name        = "Demo Realm"
+  display_name_html   = "<strong>Demo Realm</strong>"
+  login_with_email_allowed = true
+  registration_allowed     = false
+  remember_me               = true
+  verify_email              = false
 }
